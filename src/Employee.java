@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
 public class Employee {
-    private String Fullname;
+    private String fullName;
     private int id;
-    private double Salary;
-    private int Department;
+    private double salary;
+    private int department;
     private static int counter;
 
 
@@ -12,54 +12,56 @@ public class Employee {
         return this.id;
     }
 
-    public String getFullname() {
-        return this.Fullname;
+    public String getFullName() {
+        return this.fullName;
     }
 
     public int getDepartment() {
-        return this.Department;
+        return this.department;
     }
 
     public double getSalary() {
-        return this.Salary;
+        return this.salary;
     }
 
 
     public int setDepartment() {
-        return this.Department;
+        return this.department;
     }
 
     public double setZarplata() {
-        return this.Salary;
+        return this.salary;
     }
 
 
     public Employee(String Fullname, int department, int salary) {
-        this.Fullname = Fullname;
-        this.Department = department;
-        this.Salary = salary;
+        this.fullName = Fullname;
+        this.department = department;
+        this.salary = salary;
         id = ++counter;
-        System.out.println(this.Fullname);
+        System.out.println(this.fullName);
     }
 
     public static int sum(Employee[] empl) {
        double sum = 0;
        for (int i = 0; i < empl.length; i++) {
-       sum = sum + empl[i].Salary;}
+       sum = sum + empl[i].salary;}
        return (int) sum;}
 
     public static double max(Employee[] empl) {
        double max = -1;
        for (int i = 0; i < empl.length; i++) {
-       if (empl[i].Salary > max) {
-       max = empl[i].Salary;}}
+       if (empl[i].salary > max) {
+       max = empl[i].salary;}
+       }
        return max;}
 
     public static double min(Employee[] empl) {
-        double min = empl[0].Salary + 1;
+        double min = empl[0].salary + 1;
         for (int i = 0; i < empl.length; i++) {
-        if (empl[i].Salary < min) {
-        min = empl[i].Salary;}}
+        if (empl[i].salary < min) {
+        min = empl[i].salary;}
+        }
         return min;}
 
     public static double average(Employee[] empl) {
@@ -70,7 +72,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Id: " + id + " Fio: " + Fullname + " Otdel: " + Department + " Zarplata: " + Salary;
+        return "Id: " + id + " Fio: " + fullName + " Otdel: " + department + " Zarplata: " + salary;
     }
 
     public static void main(String[] args) {
